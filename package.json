@@ -1,0 +1,19 @@
+{
+  "name": "express-mysql-restful",
+  "version": "1.0.0",
+  "description": "💉 Build a RESTful API using Express and MySQL.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuongw/express-mysql-restful.git"
+  },
+  "author": "Cuong Duy Nguyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cuongw/express-mysql-restful/issues"
+  },
+  "homepage": "https://github.com/cuongw/express-mysql-restful#readme"
+}
