@@ -1,14 +1,24 @@
 require('dotenv').config()
 
 const express = require('express')
+const bodyParser = require('body-parser')
 const chalk = require('chalk')
+
+const apiCatRoute = require('./api/routes/cat.route')
 
 const app = express()
 
 const port = process.env.PORT || 3000
 
-app.get('/', (req, res) => {
-	res.send('Chao Xin!')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.get('/api', (req, res) => {
+	res.json({ message: 'chao xin! welcome to my restful api!' })
 })
 
-app.listen(port, () => console.log(chalk.bgRed(`app is listening on port ${port}`)))
+app.use('/api/cats', apiCatRoute)
+
+app.listen(port, () => 
+	console.log(chalk.bgRed(`app is listening on port ${port}`))
+)
