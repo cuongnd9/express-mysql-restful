@@ -18,6 +18,9 @@ app.get('/api', (req, res) => {
 })
 
 app.use('/api/cats', apiCatRoute)
+app.use((req, res) => {
+	res.status(404).json({ url: req.originalUrl + ' not found' })
+})
 
 app.listen(port, () => 
 	console.log(chalk.bgRed(`app is listening on port ${port}`))

@@ -3,7 +3,13 @@ const controller = require('../controllers/cat.controller')
 
 const router = express.Router()
 
-router.get('/', controller.index)
-router.post('/', controller.post)
+router.route('/')
+	.get(controller.index)
+	.post(controller.post)
+
+router.route('/:catId')
+	.get(controller.getCat)
+	.put(controller.updateCat)
+	.delete(controller.deleteCat)
 
 module.exports = router
